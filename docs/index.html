@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>빈(Vienna) 한 손에 잡기 · ICRA 2026 오스트리아 가이드</title>
+  <meta name="description" content="ICRA 2026 참석자를 위한 빈 여행 가이드. 벨베데레·쇤부른 궁전, 성 슈테판·성 페터·성 카를 성당, 소련군 기념비, 호프부르크를 한국인 시각으로 재미있게 풀어쓴 해설. 합스부르크 군주, 4대 장군, 빈 1900과 프로이트, 공중보건 이야기까지." />
+  <meta name="author" content="Hyungtae Lim" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="빈(Vienna) 한 손에 잡기 · ICRA 2026 오스트리아 가이드" />
+  <meta property="og:description" content="ICRA 2026 참석자를 위한, 한국인 시각의 빈 여행 해설. 궁전·성당·기념비에 '태그'를 붙여 그 의미와 역사·사회적 배경을 재미있게 설명합니다." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ko_KR" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --panel: #ffffff;
+      --ink: #111827;
+      --muted: #5b6472;
+      --line: #e5e7eb;
+      --accent: #dc2626;
+      --accent-soft: #fee2e2;
+      --good: #059669;
+      --good-soft: #d1fae5;
+      --warn: #d97706;
+      --warn-soft: #fef3c7;
+      --info: #2563eb;
+      --info-soft: #dbeafe;
+      --shadow: 0 16px 40px rgba(17, 24, 39, 0.08);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+    html, body { overflow-x: hidden; }
+
+    body {
+      margin: 0;
+      max-width: 100%;
+      font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 32rem),
+        radial-gradient(circle at bottom right, rgba(220, 38, 38, 0.10), transparent 30rem),
+        var(--bg);
+      color: var(--ink);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    a { color: var(--info); }
+
+    /* ---------- Layout ---------- */
+    .layout {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 28px 24px 72px;
+      display: grid;
+      grid-template-columns: 268px minmax(0, 1fr);
+      gap: 28px;
+      align-items: start;
+    }
+
+    /* ---------- Sidebar ---------- */
+    .sidebar {
+      min-width: 0;
+      position: sticky;
+      top: 24px;
+      background: rgba(255, 255, 255, 0.86);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(229, 231, 235, 0.9);
+      border-radius: 24px;
+      padding: 22px 18px;
+      box-shadow: var(--shadow);
+    }
+    .brand { padding: 4px 8px 14px; border-bottom: 1px solid var(--line); margin-bottom: 12px; }
+    .brand .eyebrow {
+      display: inline-block; font-size: 11px; font-weight: 900; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--accent);
+      background: var(--accent-soft); padding: 4px 9px; border-radius: 999px; margin-bottom: 10px;
+    }
+    .brand h1 { margin: 0; font-size: 21px; letter-spacing: -0.02em; line-height: 1.3; }
+    .brand p { margin: 6px 0 0; font-size: 12.5px; color: var(--muted); }
+
+    .tabs { display: flex; flex-direction: column; gap: 4px; }
+    .tab {
+      display: flex; align-items: center; gap: 10px;
+      width: 100%; text-align: left; border: 0; cursor: pointer;
+      background: transparent; color: #374151;
+      font: inherit; font-size: 14.5px; font-weight: 700;
+      padding: 10px 12px; border-radius: 12px;
+      transition: background-color .15s, color .15s;
+    }
+    .tab .ico { font-size: 17px; line-height: 1; width: 22px; text-align: center; }
+    .tab:hover { background: #f3f4f6; color: var(--ink); }
+    .tab.active { background: var(--ink); color: #fff; }
+    .tab.active .ico { filter: grayscale(0); }
+
+    /* ---------- Content ---------- */
+    .content { min-width: 0; }
+
+    .panel { display: none; animation: fade .28s ease-out; }
+    .panel.active { display: block; }
+    @keyframes fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+    .hero {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(229, 231, 235, 0.9);
+      border-radius: 28px;
+      padding: 34px 36px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+    .hero .keyword-row { margin-bottom: 14px; }
+    .hero h2 { margin: 0 0 8px; font-size: clamp(26px, 3.4vw, 38px); letter-spacing: -0.03em; line-height: 1.2; }
+    .hero .lead { margin: 8px 0 0; color: var(--muted); font-size: 16px; }
+
+    .section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 30px 32px;
+      box-shadow: var(--shadow);
+      margin-top: 22px;
+    }
+    .section:first-of-type { margin-top: 0; }
+    .section h3 { margin: 0 0 6px; font-size: clamp(20px, 2.4vw, 26px); letter-spacing: -0.02em; }
+    .section h4 { margin: 26px 0 8px; font-size: 18px; letter-spacing: -0.01em; color: #1f2937; }
+    .section p { margin: 10px 0; }
+    .section ul, .section ol { margin: 10px 0; padding-left: 22px; }
+    .section li { margin: 5px 0; }
+
+    .section-tag {
+      display: inline-block; padding: 4px 10px; border-radius: 999px;
+      background: #eef2ff; color: #4338ca;
+      font-size: 12px; font-weight: 800; letter-spacing: 0.03em;
+      margin-bottom: 12px;
+    }
+    .section-lead { margin: -2px 0 16px; color: var(--muted); font-size: 15px; font-style: italic; }
+
+    /* keyword badges */
+    .keyword-row { display: flex; flex-wrap: wrap; gap: 8px; }
+    .keyword {
+      display: inline-flex; align-items: center; padding: 6px 11px; border-radius: 999px;
+      background: #f3f4f6; color: #4b5563; font-weight: 800; font-size: 12.5px;
+    }
+    .keyword.hot { background: var(--accent-soft); color: var(--accent); }
+
+    /* callouts */
+    .callout { margin: 18px 0; padding: 18px 20px; border-radius: 16px; background: #111827; color: #f9fafb; font-size: 15px; }
+    .callout strong { color: #fde68a; }
+    .callout a { color: #93c5fd; }
+    .note { margin: 16px 0; padding: 14px 18px; border-radius: 14px; background: var(--info-soft); border: 1px solid #bfdbfe; color: #1e3a8a; font-size: 14.5px; }
+    .warn { margin: 16px 0; padding: 14px 18px; border-radius: 14px; background: var(--warn-soft); border: 1px solid #fcd34d; color: #78350f; font-size: 14.5px; }
+    .good { margin: 16px 0; padding: 14px 18px; border-radius: 14px; background: var(--good-soft); border: 1px solid #a7f3d0; color: #065f46; font-size: 14.5px; }
+    .note b, .warn b, .good b, .callout b { font-weight: 900; }
+
+    /* figures */
+    figure.fig { margin: 18px 0; text-align: center; }
+    figure.fig img { max-width: 100%; height: auto; border-radius: 14px; box-shadow: 0 8px 22px rgba(17,24,39,.12); border: 1px solid var(--line); }
+    figure.fig figcaption { margin-top: 9px; font-size: 13.5px; color: var(--muted); line-height: 1.6; }
+    figure.fig figcaption b { color: #374151; }
+
+    .figrow { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 18px 0; }
+    .figrow figure.fig { margin: 0; }
+
+    /* people grid (portraits) */
+    .people { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 16px; margin: 18px 0; }
+    .person { border: 1px solid var(--line); border-radius: 18px; background: #fbfdff; padding: 14px; text-align: center; }
+    .person img { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 12px; border: 1px solid var(--line); }
+    .person .nm { margin-top: 10px; font-weight: 900; font-size: 14.5px; word-break: keep-all; }
+    .person .role { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+    /* cross-link cards */
+    .reading-item {
+      display: grid; grid-template-columns: 150px minmax(0,1fr); gap: 16px; align-items: start;
+      border: 1px solid var(--line); border-radius: 18px; background: #fbfdff; padding: 16px 18px; margin-top: 12px;
+    }
+    .reading-tag { display: inline-flex; width: fit-content; padding: 4px 9px; border-radius: 999px; background: #f3f4f6; color: #6b7280; font-size: 12px; font-weight: 900; }
+    .reading-item h4 { margin: 0 0 4px; font-size: 16px; }
+    .reading-item .jump { background: none; border: 0; padding: 0; cursor: pointer; color: var(--ink); font: inherit; font-weight: 900; font-size: 16px; border-bottom: 1px solid #d1d5db; }
+    .reading-item .jump:hover { color: var(--accent); border-bottom-color: var(--accent); }
+    .reading-item p { margin: 2px 0 0; color: var(--muted); font-size: 14px; }
+
+    /* footer */
+    .site-foot { margin-top: 26px; padding: 22px 26px; border: 1px dashed var(--line); border-radius: 20px; background: rgba(255,255,255,0.6); font-size: 12.5px; color: var(--muted); }
+    .site-foot h4 { margin: 0 0 8px; font-size: 14px; color: #374151; }
+    .site-foot a { color: var(--muted); }
+
+    /* mobile nav toggle (hidden on desktop) */
+    .mobilebar { display: none; }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 980px) {
+      .layout { grid-template-columns: 1fr; gap: 16px; padding: 16px 16px 56px; }
+      .sidebar { position: sticky; top: 0; z-index: 40; border-radius: 18px; padding: 12px 12px; }
+      .brand { display: none; }
+      .tabs {
+        flex-direction: row; flex-wrap: nowrap; overflow-x: auto; gap: 6px;
+        -webkit-overflow-scrolling: touch; scrollbar-width: thin;
+      }
+      .tab { flex: 0 0 auto; white-space: nowrap; padding: 9px 13px; font-size: 13.5px; }
+      .mobilebar {
+        display: flex; align-items: center; gap: 8px; margin-bottom: 10px; padding: 0 2px;
+      }
+      .mobilebar .eyebrow { font-size: 10px; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); padding: 4px 9px; border-radius: 999px; }
+      .mobilebar .t { font-size: 14px; font-weight: 900; }
+      .hero { padding: 24px 20px; border-radius: 22px; }
+      .section { padding: 22px 18px; border-radius: 20px; }
+      .figrow { grid-template-columns: 1fr; }
+      .reading-item { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 520px) {
+      .layout { padding: 12px 12px 48px; }
+      .hero h2 { font-size: 24px; }
+      .section { padding: 18px 15px; }
+      .people { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <!-- ============ SIDEBAR ============ -->
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="eyebrow">ICRA 2026 · Vienna</span>
+        <h1>빈(Vienna)<br/>한 손에 잡기</h1>
+        <p>오스트리아의 궁전·성당·기념비에 "태그"를 붙여, 그 의미와 역사·사회적 배경을 한국인 시각으로 풀어쓴 가이드.</p>
+      </div>
+      <nav class="tabs" id="tabs" aria-label="섹션">
+        <button class="tab active" data-tab="intro"><span class="ico">🇦🇹</span>인트로 · 알면 좋은 것들</button>
+        <button class="tab" data-tab="belvedere"><span class="ico">🖼️</span>벨베데레 궁전</button>
+        <button class="tab" data-tab="schonbrunn"><span class="ico">👑</span>쇤부른 궁전</button>
+        <button class="tab" data-tab="stephansdom"><span class="ico">⛪</span>성 슈테판 성당</button>
+        <button class="tab" data-tab="peterskirche"><span class="ico">🕊️</span>성 페터 성당</button>
+        <button class="tab" data-tab="karlskirche"><span class="ico">🏛️</span>성 카를 성당</button>
+        <button class="tab" data-tab="soviet"><span class="ico">⛲</span>분수 & 소련군 기념비</button>
+        <button class="tab" data-tab="hofburg"><span class="ico">🐎</span>호프부르크 & 헬덴광장</button>
+      </nav>
+    </aside>
+
+    <!-- ============ CONTENT ============ -->
+    <main class="content">
+      <div class="mobilebar"><span class="eyebrow">ICRA 2026 · Vienna</span><span class="t">빈 한 손에 잡기</span></div>
+
+      <!-- ===== INTRO ===== -->
+      <section class="panel active" id="intro">
+        <div class="hero">
+          <div class="keyword-row">
+            <span class="keyword hot">합스부르크</span>
+            <span class="keyword">마리아 테레지아</span>
+            <span class="keyword">4대 장군</span>
+            <span class="keyword">빈 1900</span>
+            <span class="keyword">프로이트</span>
+          </div>
+          <h2>오스트리아, 알고 가면 두 배로 보인다</h2>
+          <p class="lead">600년을 이어 온 합스부르크 제국의 수도, 빈. 화려한 궁전과 성당 뒤에는 개혁군주와 명장, 그리고 "삐까번쩍한 제국"의 빛과 그림자가 함께 숨어 있습니다. ICRA 학회 틈틈이 도시를 거닐 때 알아두면 좋은 이야기들을 모았습니다.</p>
+        </div>
+
+        <section class="section">
+          <span class="section-tag">01 · 두 명의 개혁군주</span>
+          <h3>마리아 테레지아 & 요제프 2세 — 오스트리아의 "세종대왕"</h3>
+          <p class="section-lead">우리에게 세종대왕이 있다면, 오스트리아에는 이 모자(母子)가 있습니다.</p>
+          <p><b>마리아 테레지아</b>(재위 1740–1780)는 합스부르크 영토를 다스린 유일한 여성 군주였습니다. 무려 16명의 자녀를 두었고, 그중 막내딸이 프랑스로 시집간 그 유명한 <b>마리 앙투아네트</b>입니다. 그의 아들 <b>요제프 2세</b>(단독 통치 1780–1790)는 교과서에 나오는 "계몽 절대군주"의 대표 사례죠.</p>
+          <div class="people">
+            <figure class="person"><img src="assets/intro/maria-theresa.jpg" alt="마리아 테레지아" loading="lazy"/><div class="nm">마리아 테레지아</div><div class="role">재위 1740–1780</div></figure>
+            <figure class="person"><img src="assets/intro/joseph-ii.jpg" alt="요제프 2세" loading="lazy"/><div class="nm">요제프 2세</div><div class="role">단독 통치 1780–1790</div></figure>
+          </div>
+          <p>왜 "세종대왕급"이라 부를 만한지, 이들이 남긴 개혁을 보면 알 수 있습니다.</p>
+          <ul>
+            <li><b>의무교육의 씨앗</b> — 1774년 <i>일반학교령</i>으로 국가가 운영하는 초등교육 체계를 도입했습니다.</li>
+            <li><b>종교 관용</b> — 요제프 2세는 1781년 <i>관용 칙령</i>으로 개신교·정교회 신자에게, 1782년에는 유대인에게 제한적 신앙의 자유를 허용했습니다.</li>
+            <li><b>농노의 권리 확대</b> — 1781년 <i>농노 패텐트</i>로 농노에게 결혼·이주·직업 선택의 자유를 주었습니다. (다만 농노제를 완전히 "폐지"한 것은 아니며, 전면 폐지는 1848년입니다.)</li>
+            <li><b>공공의료</b> — 요제프 2세는 1784년 <b>빈 종합병원(Allgemeines Krankenhaus)</b>을 세웠습니다. 이 병원은 뒤에 나올 "손 씻기 혁명"의 무대가 됩니다.</li>
+          </ul>
+          <div class="callout">한마디로 <strong>위에서 아래로</strong> 나라를 합리적으로 뜯어고친 군주들입니다. 교육·종교·법·행정을 한꺼번에 근대화하려 했다는 점에서, 한국인에게 익숙한 "성군(聖君)"의 이미지와 잘 맞아떨어집니다.</div>
+        </section>
+
+        <section class="section">
+          <span class="section-tag">02 · 오스트리아의 4대 장군</span>
+          <h3>오이겐 · 카를 · 슈바르첸베르크 · 라데츠키</h3>
+          <p class="section-lead">제국을 지킨 네 명의 명장. 빈 곳곳에서 이들의 이름과 동상을 만나게 됩니다.</p>
+          <div class="people">
+            <figure class="person"><img src="assets/intro/eugene.jpg" alt="오이겐 공" loading="lazy"/><div class="nm">오이겐 공</div><div class="role">1663–1736</div></figure>
+            <figure class="person"><img src="assets/intro/charles.jpg" alt="카를 대공" loading="lazy"/><div class="nm">카를 대공</div><div class="role">1771–1847</div></figure>
+            <figure class="person"><img src="assets/intro/schwarzenberg.jpg" alt="슈바르첸베르크 공" loading="lazy"/><div class="nm">슈바르첸베르크</div><div class="role">1771–1820</div></figure>
+            <figure class="person"><img src="assets/intro/radetzky.jpg" alt="라데츠키 원수" loading="lazy"/><div class="nm">라데츠키</div><div class="role">1766–1858</div></figure>
+          </div>
+          <ul>
+            <li><b>사보이아의 오이겐 공(Prinz Eugen)</b> — 합스부르크 최고의 명장. 약 50년간 제국군을 이끌며 오스만 제국을 격파했습니다(1697 젠타, 1717 베오그라드 등). 뒤에 나올 <b>벨베데레 궁전</b>의 주인이기도 합니다.</li>
+            <li><b>카를 대공(Erzherzog Karl)</b> — 1809년 <b>아스페른-에슬링 전투</b>에서 나폴레옹에게 첫 의미 있는 패배를 안긴 인물로 유명합니다.</li>
+            <li><b>슈바르첸베르크 공</b> — 1813년 <b>라이프치히 "제국민 전투"</b>에서 연합군 총사령관으로 나폴레옹을 무너뜨렸습니다. (도심의 <i>슈바르첸베르크 광장</i>이 그의 이름을 땄습니다 — 마지막 탭의 소련군 기념비가 있는 바로 그 광장!)</li>
+            <li><b>라데츠키 원수</b> — 신년이면 전 세계가 듣는 바로 그 <b>"라데츠키 행진곡"</b>의 주인공입니다.</li>
+          </ul>
+          <div class="note"><b>🎻 라데츠키 행진곡 토막상식</b> — 요한 슈트라우스 1세가 작곡해 <b>1848년</b> 라데츠키의 승전을 기려 초연했습니다. 빈 신년음악회에서는 <b>1946년</b>부터 마지막 앙코르 곡으로 자리 잡았고, 관객이 지휘에 맞춰 박수를 치는 그 장면이 바로 이 곡입니다.</div>
+          <div class="reading-item">
+            <div><span class="reading-tag">함께 보기</span></div>
+            <div>
+              <h4><button class="jump" data-go="hofburg">헬덴광장의 두 기마상 →</button></h4>
+              <p>네 장군 중 <b>오이겐 공</b>과 <b>카를 대공</b>은 헬덴광장(영웅 광장)에 거대한 기마상으로 서 있습니다. "호프부르크 & 헬덴광장" 탭에서 자세히.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <span class="section-tag">03 · 오스트리아의 두 성인</span>
+          <h3>성 슈테판과 성 레오폴드 — "돌 맞은 사람"과 "성당을 든 사람"</h3>
+          <p class="section-lead">성화·조각 속 인물을 알아보는 작은 팁.</p>
+          <ul>
+            <li><b>성 슈테판(St. Stephen)</b> — 기독교 최초의 순교자. <b>돌에 맞아</b> 순교했기에, 보통 손이나 어깨 위에 <b>돌</b>을 든 젊은 부제(副祭)의 모습으로 그려집니다. 빈의 상징 <b>성 슈테판 성당</b>이 바로 이 성인에게 봉헌되었죠.</li>
+            <li><b>성 레오폴드 3세(St. Leopold)</b> — <b>오스트리아의 수호성인</b>. 자신이 세운 <b>클로스터노이부르크 수도원</b>을 손에 든 <b>"성당(건물) 모형을 든 사람"</b>으로 그려지는 것이 특징입니다.</li>
+          </ul>
+          <div class="warn"><b>🧐 흔한 착각 주의</b> — 성 슈테판 성당 정문(거인의 문) 옆에 "성당 모형을 든 사람"이 서 있어 많은 분이 성 레오폴드로 오해합니다. 하지만 그 인물은 사실 성당의 고딕 증축을 시작한 <b>창건자 루돌프 4세 공작</b>입니다. 성 슈테판의 순교 장면과 성 레오폴드는 성당 <b>내부 주제단(高祭壇)</b>에서 만날 수 있습니다.</div>
+          <div class="reading-item">
+            <div><span class="reading-tag">함께 보기</span></div>
+            <div>
+              <h4><button class="jump" data-go="stephansdom">성 슈테판 성당에서 찾아보기 →</button></h4>
+              <p>"성당 모형을 든 사람"의 정체, 컬러 지붕의 비밀까지 — 성당 탭에서 사진과 함께 부분부분 살펴봅니다.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <span class="section-tag">04 · 빈 1900</span>
+          <h3>화려한 제국의 빛과 그림자, 그리고 프로이트</h3>
+          <p class="section-lead">"세기말 빈(Vienna 1900)" — 인류 지성사의 폭발이 일어난 도시.</p>
+          <p>20세기 초의 빈은 묘한 도시였습니다. 겉으로는 링슈트라세의 웅장한 건물, 황실, 오페라로 <b>삐까번쩍</b>했지만, 안으로는 다민족 제국의 정치 불안과 사회적 억압, 막연한 불안감이 들끓고 있었죠. 이 긴장이 오히려 <b>모더니즘의 폭발</b>로 이어졌습니다. 미술에서는 클림트와 실레, 음악에서는 말러, 철학에서는 비트겐슈타인, 그리고 인간의 무의식을 파헤친 <b>지그문트 프로이트</b>가 모두 이 시기 빈에 모여 있었습니다.</p>
+          <figure class="person" style="max-width:170px;margin:18px auto;"><img src="assets/intro/freud.jpg" alt="지그문트 프로이트" loading="lazy"/><div class="nm">지그문트 프로이트</div><div class="role">1856–1939</div></figure>
+          <div class="note"><b>📍 프로이트는 "빈 사람"일까?</b> — 정확히 말하면 그는 <b>모라비아의 프라이베르크</b>(오늘날 체코 프르지보르)에서 1856년에 태어났습니다. 하지만 네 살 때인 1860년 빈으로 이주해, 이후 약 50년을 빈에서 살며 정신분석학을 만들어 냈습니다. 그의 집이자 진료실이던 <b>베르크가세 19번지</b>는 지금 프로이트 박물관입니다. 그러니 "출생지는 모라비아지만, 본질적으로 빈의 인물"이라고 하는 게 맞습니다. (1938년 나치를 피해 런던으로 망명해 이듬해 세상을 떠났습니다.)</div>
+          <div class="reading-item">
+            <div><span class="reading-tag">함께 보기</span></div>
+            <div>
+              <h4><button class="jump" data-go="belvedere">왜 클림트는 "욕망"을 그렸나 →</button></h4>
+              <p>제국의 황금빛 외관과 내면의 불안 사이에서 태어난 분리파(제체시온) 이야기는 벨베데레 탭에서.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <span class="section-tag">05 · 인구를 바꾼 공중보건</span>
+          <h3>감자, 천연두 백신, 그리고 "손 씻기"</h3>
+          <p class="section-lead">제국의 번영 뒤에는 사람을 살린 과학과 행정이 있었습니다.</p>
+          <h4>🥔 감자의 보급</h4>
+          <p>감자는 18세기 후반, 즉 마리아 테레지아·요제프 2세 시대를 거치며 합스부르크 영토의 <b>주식</b>으로 자리 잡았습니다. 처음엔 귀족·수도원의 정원에서 키우는 진귀한 작물이었지만, 7년 전쟁(1756–63) 같은 전란과 기근을 겪으며 값싸고 수확량 많은 구황작물로 빠르게 퍼졌죠.</p>
+          <div class="warn"><b>정확히 하자면</b> — "마리아 테레지아가 감자 재배를 명령했다"는 식의 이야기는 사료로 확인되지 않습니다. 농업 개혁이 계몽군주들의 정책 기조이긴 했지만, 감자는 <b>그 시대에 걸쳐 자연스럽게 퍼졌다</b>고 보는 것이 정확합니다.</div>
+          <h4>💉 천연두와의 싸움</h4>
+          <p>천연두는 황실조차 피하지 못한 공포였습니다. 1767년 <b>마리아 테레지아 본인이 천연두에 걸렸고</b>, 같은 해 딸 마리아 요제파를 잃었습니다. 회복한 그는 <b>인두법(변종접종)</b>을 적극 후원해, 1768년 빈에서 접종을 받은 아이들을 위해 직접 만찬을 베풀기도 했습니다.</p>
+          <div class="note"><b>연도 정리</b> — 제너의 우두 백신은 영국에서 1796년에 나왔고, 오스트리아에서 본격적인 <b>우두 접종은 대략 1799–1800년</b>부터 퍼졌습니다. (흔히 말하는 "1797년"보다는 조금 뒤입니다. 1768년은 그보다 앞선 <b>인두법</b> 시기입니다.)</div>
+          <h4>🧼 제멜바이스의 손 씻기 혁명</h4>
+          <p>가장 극적인 이야기입니다. 의사 <b>이그나츠 제멜바이스</b>는 <b>빈 종합병원</b> 산과 병동에서, 부검을 마친 의사들이 그대로 분만실로 와 산모를 진료하는 것이 <b>산욕열</b>의 원인임을 알아챘습니다. <b>1847년</b>, 그는 의료진에게 <b>표백분(염소 소독액)으로 손을 씻게</b> 했고, 산모 사망률은 약 12%에서 1~2%로 급락했습니다.</p>
+          <figure class="person" style="max-width:170px;margin:18px auto;"><img src="assets/intro/semmelweis.jpg" alt="이그나츠 제멜바이스" loading="lazy"/><div class="nm">이그나츠 제멜바이스</div><div class="role">"손 씻기"의 아버지</div></figure>
+          <div class="callout"><strong>다만 솔직하게</strong> — 감자·백신·소독은 사망률을 낮춰 인구 증가에 <strong>함께</strong> 기여한 요인들이지, 어느 하나가 단독으로 "인구 폭증"을 일으킨 것은 아닙니다. 특히 제멜바이스는 생전에 학계의 인정을 받지 못하고 외면당했으며, 그의 진가는 훗날 무균 수술의 시대에 와서야 빛을 봤습니다.</div>
+        </section>
+      </section>
+
+      <!-- ===== BELVEDERE ===== -->
+      <section class="panel" id="belvedere">
+        <div class="hero">
+          <div class="keyword-row"><span class="keyword hot">바로크 궁전</span><span class="keyword">오이겐 공</span><span class="keyword">클림트 "키스"</span><span class="keyword">분리파</span></div>
+          <h2>벨베데레 궁전</h2>
+          <p class="lead">명장이 지은 여름 궁전이, 세기말 빈 미술의 보물창고가 되기까지.</p>
+        </div>
+
+        <section class="section">
+          <span class="section-tag">궁전의 내력</span>
+          <h3>명장 오이겐 공의 여름 별궁</h3>
+          <p>벨베데레는 인트로에 등장한 <b>사보이아의 오이겐 공</b>이 자신의 여름 별궁으로 지은 바로크 궁전입니다. 건축가는 <b>요한 루카스 폰 힐데브란트</b>. 사적 거처인 <b>하궁(下宮)</b>과 성대한 행사를 여는 <b>상궁(上宮, 1723년 완공)</b>이 정원을 사이에 두고 마주 봅니다.</p>
+          <figure class="fig"><img src="assets/belvedere/upper-belvedere.jpg" alt="상부 벨베데레 궁전 외관" loading="lazy"/><figcaption><b>상부 벨베데레(Upper Belvedere).</b> 연못에 비친 모습이 인상적인 바로크 건축의 걸작.</figcaption></figure>
+          <p>오늘날 벨베데레는 오스트리아를 대표하는 미술관입니다. 특히 상궁은 <b>세계 최대 규모의 구스타프 클림트 컬렉션</b>을 소장하고 있습니다.</p>
+        </section>
+
+        <section class="section">
+          <span class="section-tag">반드시 볼 것</span>
+          <h3>클림트의 "키스(Der Kuss)"</h3>
+          <figure class="fig"><img src="assets/belvedere/klimt-kiss.jpg" alt="구스타프 클림트, 키스" loading="lazy"/><figcaption><b>구스타프 클림트, 「키스」(1907–1908).</b> 180×180cm. 클림트의 이른바 "황금시대"를 대표하는 작품으로, 미완성 상태에서 오스트리아 정부가 사들였습니다. 지금 이 그림을 보러 전 세계가 벨베데레로 옵니다.</figcaption></figure>
+        </section>
+
+        <section class="section">
+          <span class="section-tag">사회·역사 배경</span>
+          <h3>왜 갑자기 "욕망"을 그렸을까 — 분리파(Secession)의 탄생</h3>
+          <p class="section-lead">금빛 그림 뒤에는 세기말 빈의 긴장이 흐릅니다.</p>
+          <p>인트로에서 본 "빈 1900"의 분위기를 떠올려 보세요. 겉은 화려하지만 속은 불안했던 제국. 1897년, 클림트를 초대 회장으로 한 젊은 예술가들이 보수적인 미술 아카데미에서 <b>"분리(Secession)"</b>를 선언하며 뛰쳐나옵니다. 이들은 낡은 권위 대신 <b>에로스(욕망)·죽음·무의식</b> 같은 인간 내면의 진실을 화폭에 담으려 했습니다.</p>
+          <p>같은 시기 같은 도시에서 프로이트가 무의식을 분석하고 있었다는 점을 떠올리면, 클림트의 금빛 관능과 에곤 실레의 불안한 신체가 왜 그때 그곳에서 터져 나왔는지 자연스럽게 이해됩니다. 제국의 "삐까번쩍함"과 내면의 억압, 그 둘 사이의 긴장이 바로 빈 모더니즘의 연료였던 셈이죠.</p>
+          <div class="note"><b>한 가지 메모</b> — 에곤 실레는 흔히 분리파와 함께 묶이지만, 1897년 분리파의 <b>창립 멤버는 아닙니다</b>. 클림트보다 한 세대 뒤의 빈 표현주의 화가로 이해하면 됩니다.</div>
+          <div class="reading-item">
+            <div><span class="reading-tag">함께 보기</span></div>
+            <div><h4><button class="jump" data-go="intro">빈 1900 & 프로이트 →</button></h4><p>이 긴장의 큰 그림은 인트로 탭 "빈 1900" 단락에서.</p></div>
+          </div>
+        </section>
+      </section>
+
+      <!-- ===== SCHÖNBRUNN ===== -->
+      <section class="panel" id="schonbrunn">
+        <div class="hero">
+          <div class="keyword-row"><span class="keyword hot">합스부르크 여름궁전</span><span class="keyword">마리아 테레지아</span><span class="keyword">모차르트</span><span class="keyword">UNESCO</span></div>
+          <h2>쇤부른 궁전</h2>
+          <p class="lead">"오스트리아의 베르사유" — 합스부르크 황실의 여름 거처.</p>
+        </div>
+
+        <section class="section">
+          <span class="section-tag">궁전의 내력</span>
+          <h3>마리아 테레지아의 여름 궁전</h3>
+          <p>쇤부른은 합스부르크 황실의 <b>여름 거처</b>로, 주로 <b>마리아 테레지아</b> 시대(1740–50년대)에 건축가 니콜라우스 파카시의 손을 거쳐 지금의 모습을 갖췄습니다. 방이 무려 <b>1,441개</b>에 달하며, 1996년 <b>유네스코 세계유산</b>에 등재되었습니다.</p>
+          <figure class="fig"><img src="assets/schonbrunn/complex.jpg" alt="쇤부른 궁전 전경" loading="lazy"/><figcaption><b>쇤부른 궁전과 정원 전경.</b> 언덕 위 글로리에테까지 이어지는 대칭 정원이 한눈에 들어옵니다.</figcaption></figure>
+        </section>
+
+        <section class="section">
+          <span class="section-tag">반드시 볼 것</span>
+          <h3>거울의 방, 그리고 여섯 살 모차르트</h3>
+          <p><b>1762년 10월</b>, 여섯 살의 <b>모차르트</b>가 이 궁전의 <b>거울의 방(Spiegelsaal)</b>에서 마리아 테레지아와 황실 가족 앞에서 연주했다는 일화는 유명합니다. 연주를 마친 어린 모차르트가 황녀 마리 앙투아네트에게 "커서 결혼하자"고 했다는 귀여운 전설도 전해집니다.</p>
+          <h4>언덕 위의 글로리에테</h4>
+          <p>정원 끝 언덕에는 <b>1775년</b>에 세워진 개선문 형태의 <b>글로리에테(Gloriette)</b>가 있습니다. 이곳에서 내려다보는 궁전과 빈 시내 전망이 일품입니다.</p>
+          <div class="figrow">
+            <figure class="fig"><img src="assets/schonbrunn/gloriette.jpg" alt="글로리에테" loading="lazy"/><figcaption><b>글로리에테(1775).</b> 정원의 시각적 정점.</figcaption></figure>
+            <figure class="fig"><img src="assets/schonbrunn/gardens.jpg" alt="쇤부른 정원" loading="lazy"/><figcaption><b>바로크 정원.</b> 분수와 오벨리스크가 어우러진 산책로.</figcaption></figure>
+          </div>
+        </section>
+      </section>
+
+      <!-- ===== STEPHANSDOM ===== -->
+      <section class="panel" id="stephansdom">
+        <div class="hero">
+          <div class="keyword-row"><span class="keyword hot">고딕 대성당</span><span class="keyword">컬러 지붕</span><span class="keyword">쌍두독수리</span><span class="keyword">슈테플</span></div>
+          <h2>성 슈테판 성당 (Stephansdom)</h2>
+          <p class="lead">빈의 심장. 사진을 부분부분 뜯어보며 "투어"해 봅니다.</p>
+        </div>
+
+        <section class="section">
+          <span class="section-tag">투어 ① 지붕</span>
+          <h3>23만 장의 타일이 그린 그림</h3>
+          <p>성당에서 가장 먼저 눈에 띄는 것은 알록달록한 <b>지붕</b>입니다. 약 <b>23만 장</b>의 유약 타일이 모자이크 무늬를 이룹니다. 가파른 지붕은 바닥에서 약 38m 높이로 솟아 있죠.</p>
+          <div class="figrow">
+            <figure class="fig"><img src="assets/stephansdom/roof-tiles.jpg" alt="성당 지붕 타일 클로즈업" loading="lazy"/><figcaption><b>지붕 타일 클로즈업.</b> 유약을 입힌 색타일이 지그재그 무늬를 이룹니다.</figcaption></figure>
+            <figure class="fig"><img src="assets/stephansdom/roof-eagle.jpg" alt="지붕의 쌍두독수리" loading="lazy"/><figcaption><b>남쪽 지붕의 쌍두독수리.</b> 합스부르크(오스트리아 제국)의 상징입니다.</figcaption></figure>
+          </div>
+          <p>남쪽 지붕에는 <b>합스부르크 제국의 쌍두독수리</b>가, 북쪽 지붕에는 <b>빈 시</b>와 <b>오스트리아 공화국</b>의 문장(외머리독수리)이 타일로 그려져 있습니다. 한 지붕에 제국의 과거와 공화국의 현재가 함께 새겨진 셈이죠.</p>
+          <figure class="fig"><img src="assets/stephansdom/roof-coat-austria.jpg" alt="지붕의 오스트리아 공화국 문장" loading="lazy"/><figcaption><b>북쪽 지붕의 오스트리아 공화국 문장.</b> 제국의 쌍두독수리와 달리 외머리독수리입니다.</figcaption></figure>
+          <div class="note"><b>전쟁의 상처</b> — 지금의 지붕은 원본이 아닙니다. 1945년 2차대전 막바지 화재로 지붕이 무너졌고, 시민들의 성금으로 <b>1950년</b> 지금의 모습으로 재건되었습니다.</div>
+        </section>
+
+        <section class="section">
+          <span class="section-tag">투어 ② 탑과 종</span>
+          <h3>슈테플(남탑)과 거대한 종 푸머린</h3>
+          <p><b>남탑</b>은 빈 사람들이 애칭으로 <b>"슈테플(Steffl)"</b>이라 부르는 약 <b>136m</b> 높이의 첨탑입니다. 1368년부터 1433년까지 무려 65년에 걸쳐 세워졌고, 전망대까지 <b>343개</b>의 계단을 걸어 오를 수 있습니다.</p>
+          <p>한편 <b>북탑</b>에는 오스트리아에서 가장 큰 종 <b>푸머린(Pummerin)</b>이 걸려 있습니다. 1951년에 주조된 이 종은 무게가 <b>약 20톤</b>에 달하며, 매년 12월 31일 자정 새해를 알리는 종소리로 유명합니다.</p>
+          <div class="figrow">
+            <figure class="fig"><img src="assets/stephansdom/pummerin.jpg" alt="푸머린 종" loading="lazy"/><figcaption><b>푸머린 종.</b> 약 20톤, 오스트리아 최대.</figcaption></figure>
+            <figure class="fig"><img src="assets/stephansdom/pummerin-detail.jpg" alt="푸머린 종 디테일" loading="lazy"/><figcaption><b>종 표면의 부조 디테일.</b></figcaption></figure>
+          </div>
+        </section>
+
+        <section class="section">
+          <span class="section-tag">투어 ③ 정문</span>
+          <h3>거인의 문(Riesentor)과 "성당을 든 사람"의 정체</h3>
+          <p>서쪽 정면의 <b>거인의 문(Riesentor)</b>은 1230년대의 로마네스크 양식 정문입니다. 문 위 반원(팀파눔)에는 천사들에게 둘러싸인 <b>전능하신 그리스도(판토크라토르)</b>가 새겨져 있습니다. "거인의 문"이라는 이름은 1443년 북탑 터를 파다 발견된 큰 뼈(매머드 뼈)를 문 위에 걸어둔 데서 유래했다는 설이 있습니다.</p>
+          <div class="figrow">
+            <figure class="fig"><img src="assets/stephansdom/riesentor.jpg" alt="거인의 문" loading="lazy"/><figcaption><b>거인의 문 전경.</b> 로마네스크 양식의 서쪽 정문.</figcaption></figure>
+            <figure class="fig"><img src="assets/stephansdom/riesentor-frieze.jpg" alt="거인의 문 부조 디테일" loading="lazy"/><figcaption><b>문 둘레의 조각 띠 디테일.</b></figcaption></figure>
+          </div>
+          <div class="warn"><b>🧐 "성당 모형을 든 사람" 미스터리</b> — 인트로에서 예고한 그 인물입니다. 정문 오른쪽에 성당 건물 모형을 든 조각이 있어 많은 분이 <b>성 레오폴드</b>로 오해하지만, 사실은 성당의 고딕 증축을 명령한 <b>창건자 루돌프 4세(Rudolf IV) 공작</b>입니다. 진짜 <b>성 슈테판(돌 맞는 순교 장면)</b>과 <b>성 레오폴드</b>는 성당 <b>내부 주제단</b>에서 만날 수 있습니다(주제단은 성 슈테판의 순교를 묘사하고, 레오폴드·플로리안·세바스티안·로쿠스 등 수호성인이 둘러쌉니다).</div>
+        </section>
+
+        <section class="section">
+          <span class="section-tag">투어 ④ 지하</span>
+          <h3>카타콤 — 1만 명이 잠든 지하 묘지</h3>
+          <p>성당 지하에는 <b>1만 명 이상</b>의 유해가 안치된 <b>카타콤</b>이 있습니다. 1735년 도심 묘지가 페스트로 폐쇄되면서 이곳으로 뼈가 옮겨졌고, 고딕 성당의 초석을 놓은 <b>"창건자" 루돌프 4세</b>도 여기에 잠들어 있습니다. 가이드 투어로만 입장할 수 있습니다.</p>
+        </section>
+      </section>
+
+      <!-- ===== PETERSKIRCHE ===== -->
+      <section class="panel" id="peterskirche">
+        <div class="hero">
+          <div class="keyword-row"><span class="keyword hot">바로크 돔 성당</span><span class="keyword">그라벤</span><span class="keyword">로트마이어 천장화</span></div>
+          <h2>성 페터 성당 (Peterskirche)</h2>
+          <p class="lead">번화가 그라벤 뒤에 숨은, 황금빛 바로크의 보석함.</p>
+        </div>
+
+        <section class="section">
+          <span class="section-tag">투어 ① 위치와 내력</span>
+          <h3>그라벤 한 발짝 뒤, 초록빛 돔</h3>
+          <p>성 페터 성당은 빈의 번화한 보행거리 <b>그라벤</b> 바로 옆 페터 광장에 자리합니다. 이 자리에 성당이 있었다는 기록은 1137년까지 거슬러 올라가지만, 지금의 <b>바로크 성당</b>은 1701년경 착공해 1703년 <b>요한 루카스 폰 힐데브란트</b>(벨베데레를 지은 그 건축가!)가 이어받아 1733년에 봉헌했습니다. 레오폴트 1세 황제가 1679년 페스트 종식을 기원하며 세운 서원과 연결됩니다.</p>
+          <div class="figrow">
+            <figure class="fig"><img src="assets/peterskirche/facade.jpg" alt="성 페터 성당 정면" loading="lazy"/><figcaption><b>성 페터 성당 정면.</b> 좁은 광장에 꽉 들어찬 바로크 파사드.</figcaption></figure>
+            <figure class="fig"><img src="assets/peterskirche/dome-exterior.jpg" alt="성 페터 성당의 초록 돔" loading="lazy"/><figcaption><b>초록빛 구리 돔.</b> 빈에서 가장 이른 바로크 돔 성당 중 하나.</figcaption></figure>
+          </div>
+        </section>
+
+        <section class="section">
+          <span class="section-tag">투어 ② 내부</span>
+          <h3>황금빛 본당과 천장 프레스코</h3>
+          <p>작은 입구를 지나 안으로 들어서면, 좁은 외관과 대비되는 화려한 <b>황금빛 바로크 내부</b>가 펼쳐집니다. 천장의 타원형 돔에는 화가 <b>요한 미하엘 로트마이어</b>가 1713–1715년에 그린 <b>「성모 대관(聖母戴冠)」</b> 프레스코가 가득 차 있습니다.</p>
+          <div class="figrow">
+            <figure class="fig"><img src="assets/peterskirche/nave.jpg" alt="성 페터 성당 본당" loading="lazy"/><figcaption><b>본당과 성가대석.</b> 금장식이 빛을 반사합니다.</figcaption></figure>
+            <figure class="fig"><img src="assets/peterskirche/high-altar.jpg" alt="성 페터 성당 주제단" loading="lazy"/><figcaption><b>화려한 황금 주제단.</b></figcaption></figure>
+          </div>
+          <figure class="fig"><img src="assets/peterskirche/dome-fresco.jpg" alt="성 페터 성당 돔 천장화" loading="lazy"/><figcaption><b>타원형 돔을 올려다본 모습.</b> 로트마이어의 「성모 대관」(1713–15). 고개를 젖히고 한참 바라보게 됩니다.</figcaption></figure>
+          <div class="note"><b>근처 메모</b> — 성당 바로 앞 그라벤 거리에는 1679년 페스트 종식을 기념한 <b>페스트 기둥(Pestsäule)</b>이 서 있습니다. 성당과 함께 "페스트 이후"의 빈을 읽는 한 쌍의 모뉴먼트입니다.</div>
+        </section>
+      </section>
+
+      <!-- ===== KARLSKIRCHE ===== -->
+      <section class="panel" id="karlskirche">
+        <div class="hero">
+          <div class="keyword-row"><span class="keyword hot">바로크 걸작</span><span class="keyword">페스트 서원</span><span class="keyword">트라야누스 기둥</span><span class="keyword">피셔 폰 에를라흐</span></div>
+          <h2>성 카를 성당 (Karlskirche)</h2>
+          <p class="lead">두 개의 거대한 기둥을 거느린, 빈 바로크의 정점.</p>
+        </div>
+
+        <section class="section">
+          <span class="section-tag">투어 ① 탄생 배경</span>
+          <h3>페스트가 멈추기를 빌며 세운 성당</h3>
+          <p>1713년, 빈을 휩쓴 마지막 대규모 <b>페스트</b>가 잦아들자 황제 <b>카를 6세</b>는 감사의 서원으로 이 성당의 건립을 약속했습니다. 자신의 수호성인이자 페스트 치유의 성인으로 추앙받던 <b>성 카를로 보로메오</b>에게 헌정했죠. 건축가는 빈 바로크의 거장 <b>요한 베른하르트 피셔 폰 에를라흐</b>. 1716년 착공해, 그의 사후 아들이 이어받아 <b>1737년</b> 완성했습니다.</p>
+          <figure class="fig"><img src="assets/karlskirche/front.jpg" alt="성 카를 성당 정면" loading="lazy"/><figcaption><b>성 카를 성당 정면.</b> 그리스 신전풍 현관, 두 개의 거대 기둥, 그리고 거대한 돔이 한 화면에 모여 있습니다.</figcaption></figure>
+        </section>
+
+        <section class="section">
+          <span class="section-tag">투어 ② 두 기둥</span>
+          <h3>로마에서 가져온 아이디어 — 트라야누스 기둥</h3>
+          <p>이 성당의 가장 독특한 점은 입구 양옆에 우뚝 선 <b>두 개의 거대한 기둥</b>입니다. 이는 로마의 <b>트라야누스 기둥</b>에서 따온 것으로, 표면의 <b>나선형 부조</b>에는 성 카를로 보로메오의 생애가 새겨져 있습니다. 한 성당에 신전(현관)·기념기둥(로마)·돔(르네상스)이 한데 모인, 일종의 "건축 백과사전"인 셈이죠.</p>
+          <div class="figrow">
+            <figure class="fig"><img src="assets/karlskirche/columns.jpg" alt="성 카를 성당의 두 기둥" loading="lazy"/><figcaption><b>입구를 호위하는 두 기둥.</b> 트라야누스 기둥을 본떴습니다.</figcaption></figure>
+            <figure class="fig"><img src="assets/karlskirche/column-detail.jpg" alt="기둥 나선 부조 디테일" loading="lazy"/><figcaption><b>나선 부조 클로즈업.</b> 성 카를로 보로메오의 생애가 띠처럼 새겨져 있습니다.</figcaption></figure>
+          </div>
+        </section>
+
+        <section class="section">
+          <span class="section-tag">투어 ③ 돔과 연못</span>
+          <h3>약 70m 돔, 그리고 앞마당의 현대 조각</h3>
+          <p>내부로 들어가면 약 <b>70m</b> 높이의 타원형 <b>돔</b>이 압도합니다. 천장에는 역시 <b>로트마이어</b>의 거대한 프레스코가 펼쳐져, 성 카를로 보로메오가 성모의 도움으로 중재하는 장면을 담았습니다(약 1,250㎡!).</p>
+          <figure class="fig"><img src="assets/karlskirche/dome-interior.jpg" alt="성 카를 성당 돔 내부" loading="lazy"/><figcaption><b>돔 내부 프레스코.</b> 고개를 들면 천국이 펼쳐집니다.</figcaption></figure>
+          <p>성당 앞 <b>연못</b>에는 영국 조각가 <b>헨리 무어</b>의 청동 조각 <b>「Hill Arches」</b>(1978년 설치)가 놓여 있습니다. 300년 된 바로크 파사드와 현대 추상조각이 물 위에서 대화하는, 빈다운 장면입니다.</p>
+          <figure class="fig"><img src="assets/karlskirche/pool-moore.jpg" alt="성 카를 성당과 연못, 헨리 무어 조각" loading="lazy"/><figcaption><b>저녁의 성 카를 성당.</b> 앞 연못의 헨리 무어 「Hill Arches」가 함께 비칩니다.</figcaption></figure>
+        </section>
+      </section>
+
+      <!-- ===== SOVIET / FOUNTAIN ===== -->
+      <section class="panel" id="soviet">
+        <div class="hero">
+          <div class="keyword-row"><span class="keyword hot">호흐슈트랄 분수</span><span class="keyword">소련군 기념비</span><span class="keyword">슈바르첸베르크 광장</span><span class="keyword">1945</span></div>
+          <h2>호흐슈트랄 분수 & 소련군 전쟁기념비</h2>
+          <p class="lead">엄청 큰 분수, 그리고 그 뒤에 선 거대한 병사.</p>
+        </div>
+
+        <section class="section">
+          <span class="section-tag">투어 ① 분수</span>
+          <h3>슈바르첸베르크 광장의 호흐슈트랄 분수</h3>
+          <p>"엄청 큰 분수"의 정체는 <b>슈바르첸베르크 광장</b>(인트로의 그 장군 이름!)에 있는 <b>호흐슈트랄 분수(Hochstrahlbrunnen)</b>입니다. 1873년에 만들어진 이 분수는 도심에 시원한 물줄기를 뿜어 올립니다.</p>
+          <figure class="fig"><img src="assets/soviet/fountain.jpg" alt="호흐슈트랄 분수" loading="lazy"/><figcaption><b>호흐슈트랄 분수(1873).</b> 뒤로 반원형 콜로네이드가 살짝 보입니다.</figcaption></figure>
+        </section>
+
+        <section class="section">
+          <span class="section-tag">투어 ② 그 뒤의 군인</span>
+          <h3>붉은군대 영웅 기념비</h3>
+          <p>분수 뒤에 반원형 기둥(콜로네이드)에 둘러싸여 우뚝 선 <b>약 12m 높이의 병사상</b>이 바로 <b>붉은군대 영웅 기념비(Heldendenkmal der Roten Armee)</b>, 흔히 <b>"러시아인 기념비(Russendenkmal)"</b>라 불리는 조형물입니다. 2차대전 막바지 <b>1945년 빈 공방전</b>에서 전사한 소련군(약 1만 7천 명으로 전해짐)을 기립니다. <b>1945년 8월 19일</b> 제막되었죠.</p>
+          <div class="figrow">
+            <figure class="fig"><img src="assets/soviet/soldier.jpg" alt="붉은군대 병사상" loading="lazy"/><figcaption><b>약 12m 높이의 병사상.</b> 황금빛 방패와 깃발을 들고 있습니다.</figcaption></figure>
+            <figure class="fig"><img src="assets/soviet/memorial.jpg" alt="소련군 기념비 콜로네이드" loading="lazy"/><figcaption><b>병사상을 감싸는 반원형 콜로네이드.</b></figcaption></figure>
+          </div>
+          <p>흥미로운 점은 기념비가 <b>분수 바로 뒤</b>에 의도적으로 배치되어, 정면에서 보면 콜로네이드가 분수를 끌어안는 듯한 <b>한 장면</b>으로 합쳐진다는 것입니다. 그래서 "분수 + 군인"이 늘 한 컷에 담깁니다.</p>
+          <figure class="fig"><img src="assets/soviet/fountain-memorial.jpg" alt="분수와 기념비가 함께 보이는 모습" loading="lazy"/><figcaption><b>분수와 기념비가 겹쳐 보이는 그 유명한 구도.</b></figcaption></figure>
+          <div class="callout"><strong>미묘한 위치</strong> — 오스트리아는 <strong>1955년 국가조약 제19조</strong>에 따라 이 기념비를 보존·관리할 법적 의무가 있습니다. 그래서 정치적으로 민감한 시기(특히 2022년 이후)에도 철거되지 않고 그대로 서 있으며, 이따금 항의·낙서의 표적이 되기도 합니다. 한 도시가 자국을 점령했던 군대의 기념비를 조약 때문에 지켜야 하는, 역사의 아이러니가 담긴 장소입니다.</div>
+        </section>
+      </section>
+
+      <!-- ===== HOFBURG ===== -->
+      <section class="panel" id="hofburg">
+        <div class="hero">
+          <div class="keyword-row"><span class="keyword hot">합스부르크 겨울궁전</span><span class="keyword">헬덴광장</span><span class="keyword">기마상</span><span class="keyword">1938</span></div>
+          <h2>호프부르크 & 헬덴광장</h2>
+          <p class="lead">제국의 겨울 궁전, 그리고 네 장군 중 둘이 말 위에 선 "영웅 광장".</p>
+        </div>
+
+        <section class="section">
+          <span class="section-tag">궁전</span>
+          <h3>합스부르크의 겨울 궁전</h3>
+          <p><b>호프부르크</b>는 빈 도심 한복판에 자리한 합스부르크 황실의 <b>겨울 거처</b>로, 600여 년에 걸쳐 증축을 거듭한 거대한 복합 건물군입니다. 그 앞에 넓게 트인 광장이 바로 <b>헬덴광장(Heldenplatz)</b>, 즉 "영웅 광장"입니다.</p>
+          <figure class="fig"><img src="assets/hofburg/neue-hofburg.jpg" alt="노이에 호프부르크" loading="lazy"/><figcaption><b>노이에 호프부르크(신 왕궁) 정면.</b> 헬덴광장을 향해 반원형으로 펼쳐집니다.</figcaption></figure>
+        </section>
+
+        <section class="section">
+          <span class="section-tag">반드시 볼 것</span>
+          <h3>말 위의 두 영웅 — 오이겐 공과 카를 대공</h3>
+          <p>인트로의 "4대 장군"을 기억하시나요? 그중 <b>두 명</b>이 헬덴광장에 거대한 <b>기마상</b>으로 마주 서 있습니다. 둘 다 조각가 <b>안톤 도미니크 페른코른</b>의 작품입니다.</p>
+          <div class="figrow">
+            <figure class="fig"><img src="assets/hofburg/eugene-statue.jpg" alt="오이겐 공 기마상" loading="lazy"/><figcaption><b>사보이아의 오이겐 공 기마상(1865 제막).</b> 오스만을 격파한 명장.</figcaption></figure>
+            <figure class="fig"><img src="assets/hofburg/charles-statue.jpg" alt="카를 대공 기마상" loading="lazy"/><figcaption><b>카를 대공 기마상(1860 제막).</b> 나폴레옹에게 첫 패배를 안긴 영웅.</figcaption></figure>
+          </div>
+          <div class="note"><b>🐎 조각가의 묘기</b> — 카를 대공 기마상은 받침대에 닿는 지점이 <b>말의 뒷다리 두 개뿐</b>인, 균형의 기적으로 유명합니다. 앞다리를 든 역동적인 자세를 두 다리만으로 지탱하는 19세기 조각 기술의 자랑거리죠.</div>
+        </section>
+
+        <section class="section">
+          <span class="section-tag">역사의 한 장면</span>
+          <h3>1938년, 헬덴광장의 그늘</h3>
+          <p>이 광장은 영광만 간직한 곳이 아닙니다. <b>1938년 3월</b>, 아돌프 히틀러가 노이에 호프부르크 발코니에서 오스트리아의 <b>독일 병합(안슐루스)</b>을 선언했고, 광장은 운집한 군중으로 가득 찼습니다. "영웅 광장"이라는 이름과 이 역사가 겹치면서, 오늘날 헬덴광장은 오스트리아가 자신의 과거를 어떻게 기억할 것인가를 묻는 성찰의 공간이기도 합니다.</p>
+          <div class="reading-item">
+            <div><span class="reading-tag">함께 보기</span></div>
+            <div><h4><button class="jump" data-go="intro">4대 장군 다시 보기 →</button></h4><p>나머지 두 장군(슈바르첸베르크·라데츠키)과 라데츠키 행진곡 이야기는 인트로 탭에서.</p></div>
+          </div>
+        </section>
+      </section>
+
+      <!-- ===== FOOTER ===== -->
+      <footer class="site-foot">
+        <h4>이미지 출처 & 안내</h4>
+        <p>이 페이지의 사진은 대부분 <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">위키미디어 커먼즈(Wikimedia Commons)</a>의 자유 라이선스(공용·CC) 이미지를 내려받아 사용했습니다. 각 이미지의 상세 저작자·라이선스는 커먼즈 원본 파일 페이지에서 확인할 수 있습니다. 클림트의 「키스」를 비롯한 회화는 작가 사후 충분한 시간이 지나 퍼블릭 도메인입니다.</p>
+        <p>본 가이드는 ICRA 2026 참석자를 위한 비영리 교육·정보용으로 제작되었습니다. 역사적 사실은 위키백과 등 공개 자료를 교차 확인했으나, 일부 일화는 대중적으로 전해지는 이야기를 포함합니다.</p>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    (function () {
+      var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+      var panels = Array.prototype.slice.call(document.querySelectorAll('.panel'));
+      var valid = panels.map(function (p) { return p.id; });
+
+      function activate(id, push) {
+        if (valid.indexOf(id) === -1) id = valid[0];
+        tabs.forEach(function (t) { t.classList.toggle('active', t.dataset.tab === id); });
+        panels.forEach(function (p) { p.classList.toggle('active', p.id === id); });
+        if (push) {
+          if (history.replaceState) history.replaceState(null, '', '#' + id);
+          else location.hash = id;
+        }
+        // scroll content to top on tab change
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        // keep active tab visible in the mobile horizontal nav
+        var activeTab = document.querySelector('.tab.active');
+        if (activeTab && activeTab.scrollIntoView) {
+          activeTab.scrollIntoView({ block: 'nearest', inline: 'center' });
+        }
+      }
+
+      tabs.forEach(function (t) {
+        t.addEventListener('click', function () { activate(t.dataset.tab, true); });
+      });
+
+      // cross-link jump buttons
+      document.querySelectorAll('.jump').forEach(function (b) {
+        b.addEventListener('click', function () { activate(b.dataset.go, true); });
+      });
+
+      window.addEventListener('hashchange', function () {
+        activate((location.hash || '').replace('#', ''), false);
+      });
+
+      // initial
+      activate((location.hash || '').replace('#', '') || valid[0], false);
+    })();
+  </script>
+</body>
+</html>
