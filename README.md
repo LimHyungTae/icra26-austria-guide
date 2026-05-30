@@ -1,6 +1,6 @@
 <div align="center">
 
-<h1>빈(Vienna) 한 손에 잡기</h1>
+<h1>아는 만큼 보이는 빈</h1>
 
 <p><strong><em>ICRA 2026 참석자를 위한 오스트리아 · 빈 여행 가이드</em></strong></p>
 
